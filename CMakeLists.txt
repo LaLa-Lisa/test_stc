@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(testSTC)
+set(CMAKE_CXX_COMPILER "clang++")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(include)
+project(testSTC)
 
 set(SOURCES
   src/main.cpp
-  src/smv.cpp
 )
 
-add_executable(testSRC ${SOURCES})
+add_executable(testSTC ${SOURCES})
+
+target_include_directories(testSTC PUBLIC include)
